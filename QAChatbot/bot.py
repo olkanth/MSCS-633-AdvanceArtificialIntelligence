@@ -1,9 +1,21 @@
 from chatterbot import ChatBot
-from chatterbot.trainers import ChatterBotCorpusTrainer
+from chatterbot.trainers import ChatterBotCorpusTrainer, ListTrainer
 
 chatbot = ChatBot('QAChatbot')
-trainer = ChatterBotCorpusTrainer(chatbot)
-trainer.train('chatterbot.corpus.english') 
+# trainer = ChatterBotCorpusTrainer(chatbot)
+# trainer.train('chatterbot.corpus.english') 
+
+conversation = [
+    "Hello",
+    "Hi there!",
+    "How are you doing?",
+    "I'm doing great.",
+    "That is good to hear",
+    "Thank you.",
+    "You're welcome."
+]
+trainer = ListTrainer(chatbot)
+trainer.train(conversation)
 
 def get_response(user_input):
     return chatbot.get_response(user_input)
