@@ -30,11 +30,11 @@ def get_response(user_input):
 if __name__ == "__main__":
     print("Welcome to the QA Chatbot! Type 'exit' to quit.")
     while True:
-        user_input = input("user > ")
+        user_input = input("user : ")
 
         # Exit condition for the chatbot
         if user_input.lower() == 'exit':
             print("Goodbye!")
             break
         response = get_response(user_input)
-        print(f"Bot >  {response}")
+        print(f"Bot :  {response}")
