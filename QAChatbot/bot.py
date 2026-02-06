@@ -11,11 +11,10 @@ chatbot = ChatBot('QAChatbot')
 conversation = [
     "Hello",
     "Hi there!",
-    "How are you doing?",
-    "I'm doing great.",
-    "That is good to hear",
-    "Thank you.",
-    "You're welcome."
+    "Good morning! How are you doing?",
+    "I am doing very well, thank you for asking.",
+    "You're welcome.",
+    "Do you like hats?"
 ]
 
 # ListTrainer allows us to train the chatbot with a list of strings we want it to learn from
