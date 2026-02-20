@@ -4,7 +4,7 @@ This project uses an AutoEncoder neural network to detect fraudulent credit card
 
 ## High-Level Explanation
 
-The `detect_fraud.py` script loads a dataset of credit card transactions from `creditcard.csv`. It then builds and trains an AutoEncoder model using the `pyod` library. The trained model is used to identify outliers in the dataset, which are considered potentially fraudulent transactions. Finally, the script generates a scatter plot to visualize the outlier scores.
+The `detect_fraud.py` script loads a dataset of credit card transactions from [`creditcard.csv`](https://www.kaggle.com/datasets/whenamancodes/fraud-detection). It then builds and trains an AutoEncoder model using the `pyod` library. The trained model is used to identify outliers in the dataset, which are considered potentially fraudulent transactions. Finally, the script generates a scatter plot to visualize the outlier scores.
 
 ## Packages Needed
 
@@ -25,7 +25,7 @@ pip install pandas numpy matplotlib seaborn pyod
 ## Execution Instructions
 
 1.  Make sure you have the required packages installed.
-2.  Download the `creditcard.csv` dataset and place it in the same directory as the `detect_fraud.py` script.
+2.  Download the [`creditcard.csv`](https://www.kaggle.com/datasets/whenamancodes/fraud-detection) dataset and place it in the same directory as the `detect_fraud.py` script.
 3.  Run the script from your terminal:
 
 ```bash
