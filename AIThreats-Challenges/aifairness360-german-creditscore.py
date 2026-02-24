@@ -28,8 +28,17 @@ metric_orig_train = BinaryLabelDatasetMetric(dataset_orig_train,
                                             unprivileged_groups=unprivileged_groups,
                                             privileged_groups=privileged_groups)
 
-print("--- Original Training Dataset ---")
+print("\n \n --- Original Training Dataset ---")
 print("Difference in mean outcomes (Mean Difference) = %f" % metric_orig_train.mean_difference())
+
+# Positive outcome rate for privileged and unprivileged groups in the original training dataset before applying the Reweighing algorithm
+privileged_positive_rate = metric_orig_train.base_rate()
+unprivileged_positive_rate = metric_orig_train.base_rate(privileged=False)
+
+# Display the positive outcome rates for privileged and unprivileged groups in the original training dataset before applying the Reweighing algorithm.
+print("Positive outcome rate for privileged group = %.2f%%" % (privileged_positive_rate * 100))
+print("Positive outcome rate for unprivileged group = %.2f%%" % (unprivileged_positive_rate * 100))
+
 
 # Apply the Reweighing algorithm to the training dataset to mitigate bias before classification.
 RW = Reweighing(unprivileged_groups=unprivileged_groups,
@@ -41,5 +50,13 @@ metric_transf_train = BinaryLabelDatasetMetric(dataset_transf_train,
                                               unprivileged_groups=unprivileged_groups,
                                               privileged_groups=privileged_groups)
 
-print("\n--- Transformed Training Dataset (After Reweighing) ---")
+print("\n \n --- Transformed Training Dataset (After Reweighing) ---")
 print("Difference in mean outcomes (Mean Difference) = %f" % metric_transf_train.mean_difference())
+
+# Positive outcome rate for privileged and unprivileged groups in the transformed training dataset after applying the Reweighing algorithm
+privileged_positive_rate_transf = metric_transf_train.base_rate()   
+unprivileged_positive_rate_transf = metric_transf_train.base_rate(privileged=False)
+
+print("Positive outcome rate for privileged group = %.2f%%" % (privileged_positive_rate_transf * 100))
+print("Positive outcome rate for unprivileged group = %.2f%%" % (unprivileged_positive_rate_transf * 100))
+print("\n \n ")
